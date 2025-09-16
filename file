@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ZOMBIE - Free Fire Items</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div id="particles-js" aria-hidden="true"></div>
+
+<!-- زر القائمة + الشريط الجانبي -->
+<button id="menu-btn" class="menu-btn" aria-label="فتح القائمة" title="القائمة">⋮</button>
+<aside id="sidebar" class="sidebar" aria-label="قائمة الموقع" tabindex="-1">
+  <div class="sidebar-header">
+    <span>القائمة</span>
+    <button id="close-sidebar" class="close-btn" aria-label="إغلاق">×</button>
+  </div>
+  <nav class="sidebar-links">
+    <a href="/">إرسال العناصر (الرئيسية)</a>
+    <a href="/long_bio">إنشاء Long Bio</a>
+    <a href="/uid_login">UID & Password → JWT</a>
+    <a href="/access_login">Access Token → JWT</a>
+  </nav>
+</aside>
+<div id="backdrop" class="backdrop" tabindex="-1" aria-hidden="true"></div>
+
+<div>
+    <header>
+        <h1>ZOM<span class="BIE-letter">BIE</span>D5M/h1>
+    </header>
+
+    <div class="container" role="region" aria-label="نموذج إرسال العناصر">
+        <form id="ff-form" method="POST" novalidate>
+            <label for="jwt_token">توكن الحساب:</label>
+            <input id="jwt_token" type="text" name="jwt_token" required placeholder="أدخل التوكن الخاص بك" autocomplete="off" inputmode="text">
+
+            
+            <div class="item-row">
+                <input type="number" name="item1" placeholder="ID العنصر 1" inputmode="numeric">
+                <label class="toggle" title="تفعيل/تعطيل العنصر 1">
+                    <input type="checkbox" name="enable1" checked aria-label="تفعيل عنصر 1">
+                </label>
+            </div>
+            
+            <div class="item-row">
+                <input type="number" name="item2" placeholder="ID العنصر 2" inputmode="numeric">
+                <label class="toggle" title="تفعيل/تعطيل العنصر 2">
+                    <input type="checkbox" name="enable2" checked aria-label="تفعيل عنصر 2">
+                </label>
+            </div>
+            
+            <div class="item-row">
+                <input type="number" name="item3" placeholder="ID العنصر 3" inputmode="numeric">
+                <label class="toggle" title="تفعيل/تعطيل العنصر 3">
+                    <input type="checkbox" name="enable3" checked aria-label="تفعيل عنصر 3">
+                </label>
+            </div>
+            
+            <div class="item-row">
+                <input type="number" name="item4" placeholder="ID العنصر 4" inputmode="numeric">
+                <label class="toggle" title="تفعيل/تعطيل العنصر 4">
+                    <input type="checkbox" name="enable4" checked aria-label="تفعيل عنصر 4">
+                </label>
+            </div>
+            
+            <div class="item-row">
+                <input type="number" name="item5" placeholder="ID العنصر 5" inputmode="numeric">
+                <label class="toggle" title="تفعيل/تعطيل العنصر 5">
+                    <input type="checkbox" name="enable5" checked aria-label="تفعيل عنصر 5">
+                </label>
+            </div>
+            
+            <div class="item-row">
+                <input type="number" name="item6" placeholder="ID العنصر 6" inputmode="numeric">
+                <label class="toggle" title="تفعيل/تعطيل العنصر 6">
+                    <input type="checkbox" name="enable6" checked aria-label="تفعيل عنصر 6">
+                </label>
+            </div>
+            
+            <div class="item-row">
+                <input type="number" name="item7" placeholder="ID العنصر 7" inputmode="numeric">
+                <label class="toggle" title="تفعيل/تعطيل العنصر 7">
+                    <input type="checkbox" name="enable7" checked aria-label="تفعيل عنصر 7">
+                </label>
+            </div>
+            
+            <div class="item-row">
+                <input type="number" name="item8" placeholder="ID العنصر 8" inputmode="numeric">
+                <label class="toggle" title="تفعيل/تعطيل العنصر 8">
+                    <input type="checkbox" name="enable8" checked aria-label="تفعيل عنصر 8">
+                </label>
+            </div>
+            
+            <div class="item-row">
+                <input type="number" name="item9" placeholder="ID العنصر 9" inputmode="numeric">
+                <label class="toggle" title="تفعيل/تعطيل العنصر 9">
+                    <input type="checkbox" name="enable9" checked aria-label="تفعيل عنصر 9">
+                </label>
+            </div>
+            
+            <div class="item-row">
+                <input type="number" name="item10" placeholder="ID العنصر 10" inputmode="numeric">
+                <label class="toggle" title="تفعيل/تعطيل العنصر 10">
+                    <input type="checkbox" name="enable10" checked aria-label="تفعيل عنصر 10">
+                </label>
+            </div>
+            
+            <div class="item-row">
+                <input type="number" name="item11" placeholder="ID العنصر 11" inputmode="numeric">
+                <label class="toggle" title="تفعيل/تعطيل العنصر 11">
+                    <input type="checkbox" name="enable11" checked aria-label="تفعيل عنصر 11">
+                </label>
+            </div>
+            
+            <div class="item-row">
+                <input type="number" name="item12" placeholder="ID العنصر 12" inputmode="numeric">
+                <label class="toggle" title="تفعيل/تعطيل العنصر 12">
+                    <input type="checkbox" name="enable12" checked aria-label="تفعيل عنصر 12">
+                </label>
+            </div>
+            
+            <div class="item-row">
+                <input type="number" name="item13" placeholder="ID العنصر 13" inputmode="numeric">
+                <label class="toggle" title="تفعيل/تعطيل العنصر 13">
+                    <input type="checkbox" name="enable13" checked aria-label="تفعيل عنصر 13">
+                </label>
+            </div>
+            
+            <div class="item-row">
+                <input type="number" name="item14" placeholder="ID العنصر 14" inputmode="numeric">
+                <label class="toggle" title="تفعيل/تعطيل العنصر 14">
+                    <input type="checkbox" name="enable14" checked aria-label="تفعيل عنصر 14">
+                </label>
+            </div>
+            
+            <div class="item-row">
+                <input type="number" name="item15" placeholder="ID العنصر 15" inputmode="numeric">
+                <label class="toggle" title="تفعيل/تعطيل العنصر 15">
+                    <input type="checkbox" name="enable15" checked aria-label="تفعيل عنصر 15">
+                </label>
+            </div>
+            
+
+            <button type="submit" id="submit-btn">إرسال</button>
+        </form>
+
+        
+    </div>
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>

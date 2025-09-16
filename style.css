@@ -1,0 +1,287 @@
+:root{
+    --base-font-size: 18px;
+    --scale-up: 1.12;
+    --radius-lg: 18px;
+    --radius-md: 12px;
+    --radius-sm: 8px;
+
+    --bg-1: #0d0d0d;
+    --bg-2: #141414;
+    --bg-3: #232323;
+    --card: rgba(18,18,18,0.95);
+    --card-glow: rgba(0,0,0,0.6);
+    --field: #0f1112;
+    --field-border: #2d2f31;
+    --field-border-focus: #00f0c6;
+    --text: #e9f1f4;
+    --primary-1: #00f0c6;
+    --primary-2: #00b3ff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; scroll-behavior: smooth; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: calc(var(--base-font-size) * var(--scale-up));
+    background: radial-gradient(circle at center, var(--bg-1) 0%, var(--bg-2) 50%, var(--bg-3) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 18px 12px 40px;
+    color: var(--text);
+    animation: fadeInBody 0.9s ease-in-out forwards;
+    position: relative;
+    min-height: 100vh;
+}
+
+@keyframes fadeInBody { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+#particles-js { position: fixed; inset: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.95; }
+
+header { text-align: center; padding: 14px 8px 8px; z-index: 10; }
+header h1 { font-size: clamp(28px, 5.2vw, 46px); letter-spacing: 2px; color: #ffffff; font-weight: 800; display: inline-block; padding: 4px 10px; text-shadow: 0 2px 0 rgba(0,0,0,0.35); }
+
+header h1 .x-letter { position: relative; color: var(--primary-1); font-weight: 900; display: inline-block; transform: skewX(-6deg); animation: glitch-burst 2.5s infinite steps(1), glitch-move 0.3s infinite; }
+header h1 .x-letter::before, header h1 .x-letter::after { content: "X"; position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.8; clip-path: inset(0 0 0 0); }
+header h1 .x-letter::before { color: red; animation: glitch-slice-red 2.5s infinite steps(1), glitch-shift-red 0.3s infinite; }
+header h1 .x-letter::after { color: cyan; animation: glitch-slice-cyan 2.5s infinite steps(1), glitch-shift-cyan 0.3s infinite; }
+
+@keyframes glitch-burst { 0%, 88%, 100% { transform: skewX(-6deg) translate(0,0); } 90% { transform: skewX(-6deg) translate(-2px,-1px); } 92% { transform: skewX(-6deg) translate(3px,1px); } 94% { transform: skewX(-6deg) translate(-1px,2px); } 96% { transform: skewX(-6deg) translate(1px,-2px); } }
+@keyframes glitch-move { 0% { transform: skewX(-6deg) translate(0,0); } 25% { transform: skewX(-6deg) translate(1px,0); } 50% { transform: skewX(-6deg) translate(-1px,0); } 75% { transform: skewX(-6deg) translate(1px,1px); } 100% { transform: skewX(-6deg) translate(0,0); } }
+@keyframes glitch-slice-red { 0%, 88%, 100% { clip-path: inset(0 0 0 0); } 90% { clip-path: inset(0 0 80% 0); } 92% { clip-path: inset(20% 0 60% 0); } 94% { clip-path: inset(10% 0 50% 0); } 96% { clip-path: inset(40% 0 20% 0); } }
+@keyframes glitch-slice-cyan { 0%, 88%, 100% { clip-path: inset(0 0 0 0); } 90% { clip-path: inset(80% 0 0 0); } 92% { clip-path: inset(60% 0 10% 0); } 94% { clip-path: inset(50% 0 5% 0); } 96% { clip-path: inset(20% 0 30% 0); } }
+@keyframes glitch-shift-red { 0%, 100% { transform: translate(0,0); } 50% { transform: translate(-1px, 0); } }
+@keyframes glitch-shift-cyan { 0%, 100% { transform: translate(0,0); } 50% { transform: translate(1px, 0); } }
+
+.container { max-width: 850px; width: 88%; margin: 12px auto 36px auto; min-height: auto; background: var(--card); padding: 22px 22px 28px 22px; border-radius: 14px; box-shadow: 0 12px 36px var(--card-glow); overflow: visible; }
+
+form#ff-form, .container form { display: flex; flex-direction: column; gap: 12px; }
+label { display: block; margin-top: 8px; font-weight: 700; font-size: 17px; color: #dfe6ea; }
+input[type=text], input[type=number], input[type=password], textarea{
+    width: 100%; padding: 12px; margin: 6px 0; border-radius: 10px; border: 1px solid var(--field-border);
+    outline: none; background: var(--field); color: #fff; transition: all 0.18s ease; font-size: 15px;
+}
+textarea { resize: vertical; min-height: 140px; }
+input::placeholder, textarea::placeholder { color: #94a0a6; }
+input:focus, textarea:focus { border-color: var(--field-border-focus); box-shadow: 0 0 10px rgba(0,240,198,0.12); transform: translateY(-1px); }
+
+.item-row{ display: flex; align-items: center; justify-content: flex-start; gap: 12px; margin-bottom: 10px; padding: 10px; border-radius: 10px; background: linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02)); transition: background 0.16s ease, transform 0.14s ease; }
+.item-row:hover{ background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.035)); transform: translateY(-2px); }
+.item-row input[type=number]{ flex: 1; width: auto; }
+
+/* الحقول المعطلة */
+.item-row.disabled {
+    opacity: 0.45;
+    pointer-events: none;
+}
+.item-row.disabled input[type=text],
+.item-row.disabled input[type=number] {
+    background: #2a2a2a;
+    border-color: #444;
+    color: #888;
+}
+
+.toggle{ margin-left: auto; display: flex; align-items: center; gap: 8px; }
+.toggle input[type=checkbox]{ appearance: none; width: 48px; height: 26px; background: #3a3a3a; border-radius: 999px; position: relative; cursor: pointer; transition: background 0.18s ease, transform 0.12s ease; box-shadow: inset 0 -2px 0 rgba(0,0,0,0.35); }
+.toggle input[type=checkbox]::before{ content: ''; position: absolute; width: 20px; height: 20px; background: #fff; border-radius: 50%; top: 3px; left: 4px; transition: transform 0.18s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.35); }
+.toggle input[type=checkbox]:checked{ background: linear-gradient(90deg, var(--primary-1), var(--primary-2)); }
+.toggle input[type=checkbox]:checked::before{ transform: translateX(22px); }
+
+button { background: linear-gradient(90deg, var(--primary-1), var(--primary-2)); color: #061018; padding: 12px 20px; border: none; border-radius: 10px; cursor: pointer; margin-top: 10px; font-size: 15px; font-weight: 700; transition: transform 0.14s ease, box-shadow 0.14s ease; }
+button:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(0,176,255,0.08); }
+
+.copy-row { display: flex; gap: 8px; align-items: center; }
+.copy-row input[type=text]{ flex: 1; }
+.copy-btn { white-space: nowrap; }
+
+.result{ margin-top: 12px; padding: 12px; background: rgba(0,0,0,0.5); border-radius: 10px; color: #e6f7f3; font-weight: 600; line-height: 1.4; font-size: 14px; overflow-x: auto; }
+
+@media (max-width: 992px){ .container{ width: 95%; padding: 18px; } label{ font-size: 16px; } input, textarea { font-size: 14px; padding: 10px; } button{ font-size: 14px; padding: 10px 16px; } }
+@media (max-width: 640px){ body { padding-top: 18px; } header { padding: 10px 6px; } .container { width: 96%; padding: 14px; border-radius: 12px; } .item-row { padding: 10px; gap: 8px; } .toggle input[type=checkbox]{ width: 44px; height: 24px; } .toggle input[type=checkbox]::before{ width: 18px; height: 18px; top: 3px; left: 4px; } }
+
+/* ======= القائمة الجانبية ======= */
+.menu-btn{
+  position: fixed; top: 14px; right: 14px; z-index: 50;
+  width: 42px; height: 42px; border-radius: 12px; border: 1px solid #2a2f31;
+  background: rgba(15,17,18,0.7); backdrop-filter: blur(6px); color: #eaf3f6;
+  font-size: 22px; line-height: 1; cursor: pointer;
+  transition: transform .12s ease, box-shadow .14s ease, background .2s ease;
+}
+.menu-btn:hover{ transform: translateY(-1px); box-shadow: 0 8px 22px rgba(0,176,255,0.08); }
+.sidebar{
+  position: fixed; top: 0; right: 0; height: 100vh; width: min(320px, 86vw);
+  background: rgba(18,18,18,0.98); box-shadow: -12px 0 36px rgba(0,0,0,0.5);
+  transform: translateX(100%); transition: transform .25s ease; z-index: 60; padding: 14px;
+  border-left: 1px solid #202325;
+}
+.sidebar.open{ transform: translateX(0); }
+.sidebar-header{ display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.sidebar-header span{ font-weight: 800; letter-spacing: .5px; }
+.close-btn{ background: transparent; border: none; color: #eaf3f6; font-size: 26px; cursor: pointer; line-height: 1; }
+.sidebar-links{ display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+.sidebar-links a{
+  display: block; padding: 10px 12px; border-radius: 10px; text-decoration: none; color: #dfe6ea;
+  background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.04));
+  border: 1px solid #242a2d; transition: background .16s ease, transform .12s ease;
+}
+.sidebar-links a:hover{ transform: translateY(-1px); background: linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.07)); }
+.sidebar-links a.active{ outline: 2px solid var(--primary-1); }
+.sidebar-links a.disabled{ opacity: .45; pointer-events: none; }
+.backdrop{
+  position: fixed; inset: 0; background: rgba(0,0,0,0.35); z-index: 55; opacity: 0; visibility: hidden; transition: opacity .2s ease, visibility .2s ease;
+}
+.backdrop.show{ opacity: 1; visibility: visible; }
+
+/* === التعديلات المضافة للتمركز === */
+body.page-loginbio, body.page-uidpass {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+body.page-loginbio header,
+body.page-uidpass header {
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+body.page-loginbio .container,
+body.page-uidpass .container {
+  margin: 0 auto;
+  max-width: 500px;
+  width: 90%;
+}
+
+@media (max-width: 640px) {
+  body.page-loginbio .container,
+  body.page-uidpass .container {
+    width: 95%;
+  }
+}
+
+/* === دعم إضافي: استهداف الصفحات بالاعتماد على وجود حقول UID أو BIO (لمن لم يضع كلاس في الـ<body>) ===
+   يستخدم :has() ليطبق نفس التمركز تلقائياً عندما تتضمن الصفحة عنصر #uid أو عنصر #bio.
+   هذا يعمل في المتصفحات الحديثة. إذا المتصفح لا يدعم :has() يعتمد على body.page-* أعلاه. */
+body:has(#uid), body:has(#bio) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0;
+}
+
+body:has(#uid) header,
+body:has(#bio) header {
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+body:has(#uid) .container,
+body:has(#bio) .container {
+  margin: 0 auto;
+  max-width: 500px;
+  width: 90%;
+  padding: 28px 24px;
+  border-radius: var(--radius-lg);
+}
+
+/* استجابة إضافية */
+@media (max-width: 640px) {
+  body:has(#uid) .container,
+  body:has(#bio) .container {
+    width: 95%;
+    padding: 20px 16px;
+  }
+}
+
+/* تحسين مظهر زر النسخ لو ظهر */
+.copy-btn {
+  margin-top: 10px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, var(--primary-1), var(--primary-2));
+  color: #061018;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.14s ease, box-shadow 0.14s ease;
+}
+.copy-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(0,176,255,0.08); }
+
+/* === الإضافات المضافة (لا تغيّر الكود الأصلي أعلاه) ===
+   تمكين رابط Access Token و دعم تمركز صفحة Access Token */
+ 
+/* جعل الرابط الذي كان "قريبًا" قابلاً للنقر (يستبدل مظهر الـ .disabled لمرة واحدة) */
+.sidebar-links a[title="لاحقًا"] {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  cursor: pointer;
+  background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.04));
+  border: 1px solid #242a2d;
+  outline: 2px solid transparent;
+  transition: background .16s ease, transform .12s ease;
+}
+
+/* إظهار تفاعل hover مشابه للعناصر الأخرى */
+.sidebar-links a[title="لاحقًا"]:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.07));
+  outline: 2px solid var(--primary-1);
+}
+
+/* دعم تمركز صفحة Access Token — ضع class="page-access" على <body> أو اعتمد على :has(#access_token) */
+body.page-access, body:has(#access_token) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0;
+}
+
+body.page-access header,
+body:has(#access_token) header {
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+body.page-access .container,
+body:has(#access_token) .container {
+  margin: 0 auto;
+  max-width: 500px;
+  width: 90%;
+  padding: 28px 24px;
+  border-radius: var(--radius-lg);
+}
+
+/* استجابة للجوال للصفحة الجديدة */
+@media (max-width: 640px) {
+  body.page-access .container,
+  body:has(#access_token) .container {
+    width: 95%;
+    padding: 20px 16px;
+  }
+}
+
+/* تحسين مظهر الزر (لو استخدمت زر نسخ داخل النتيجة) */
+.result button, .result .copy-btn {
+  margin-top: 10px;
+}
+
+/* === إضافات أخيرة لضمان تمركز الشعار و الحاوية حتى لو لم تضف كلاسات في الـ<body> === */
+/* (هذه القواعد آمنة ومكملة ولا تلغي أي قواعد سابقة) */
+body:has(#access_token) header h1,
+body:has(#uid) header h1,
+body:has(#bio) header h1 {
+  margin: 0 auto;
+  display: inline-block;
+}
+
+/* نهاية الملف */
