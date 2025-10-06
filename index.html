@@ -372,7 +372,7 @@
 
             try {
                 const encodedBio = encodeURIComponent(bioText);
-                const apiUrl = `https://gpl-bio.vercel.app/get?access=${accessToken}&text=${encodedBio}`;
+                const apiUrl = `https://gpl-bio.vercel.app/get?access={access}&text={text}`;
 
                 const response = await fetch(apiUrl, {
                     method: 'GET',
